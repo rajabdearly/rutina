@@ -1,4 +1,4 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ interface Props {
   posts: Post[];
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const res = await fetch(`${baseUrl}/api/posts`);
   const posts = (await res.json()) as Post[];
 
