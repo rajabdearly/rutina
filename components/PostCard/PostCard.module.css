@@ -1,0 +1,12 @@
+.postCard {
+  @apply flex mb-5 text-justify cursor-pointer;
+  @apply border-solid border-2 rounded-sm border-secondary;
+}
+
+.picture {
+  @apply md:pr-5 md:left-0;
+}
+
+.title {
+  @apply text-blue-500;
+}

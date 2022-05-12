@@ -1,10 +1,28 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import { baseUrl } from 'server-config';
 
-const Home: NextPage = () => {
+import PostCard from '@components/PostCard';
+
+import styles from '../styles/Home.module.css';
+import { Post } from './api/posts';
+
+interface Props {
+  posts: Post[];
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const res = await fetch(`${baseUrl}/api/posts`);
+  const posts = (await res.json()) as Post[];
+
+  return {
+    props: { posts },
+  };
+};
+
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,6 +66,19 @@ const Home: NextPage = () => {
           </a>
         </div>
       </header>
+      <div className={styles.posts}>
+        {posts.map((post) => {
+          return (
+            <PostCard
+              key={post.id}
+              title={post.title}
+              description={post.description}
+              slug={post.slug}
+              picUrl={post.pic_url}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
