@@ -1,0 +1,11 @@
+.message {
+    @apply flex items-center justify-center md:mt-48;
+}
+
+.icon {
+    @apply mr-2 w-14;
+}
+
+.text {
+    @apply flex items-center;
+}
