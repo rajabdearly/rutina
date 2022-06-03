@@ -10,7 +10,7 @@
 }
 
 .logoSection {
-  @apply flex items-center;
+  @apply flex items-center cursor-pointer;
 }
 
 .nav a:hover,
