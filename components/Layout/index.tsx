@@ -8,6 +8,7 @@ import styles from './index.module.css';
 
 const Layout = ({children}: {children: ReactNode}) => {
     return (
+      <>
         <div className={styles.container}>
           <Head>
             <title>Рутина</title>
@@ -50,8 +51,23 @@ const Layout = ({children}: {children: ReactNode}) => {
               </a>
             </div>
           </header>
-            <main>{children}</main>
+          <main>{children}</main>
+          
         </div>
+        <footer className={styles.footer}>
+        <div className="relative flex items-center py-5">
+          <div className="flex-grow border-t border-gray-400"></div>
+          <span className="mx-4 flex-shrink text-gray-400">Made with ❤️ by <a
+                className={styles.source}
+                href="https://github.com/rajabdearly"
+                target="_blank"
+                rel="noreferrer"
+              >Rajab Azizli</a>
+          </span>
+          <div className="flex-grow border-t border-gray-400"></div>
+        </div>
+        </footer>
+        </>
       );
 };
 
