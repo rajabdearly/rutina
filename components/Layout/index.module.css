@@ -1,0 +1,49 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+  
+.header {
+  @apply sticky top-0 backdrop-blur-sm;
+  @apply flex justify-between align-middle;
+  @apply mb-20 py-4 px-8;
+}
+
+.logoSection {
+  @apply flex items-center;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  text-decoration: underline;
+}
+
+.nav {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.source {
+  margin-right: 0.5rem;
+}
+.subscribe {
+  @apply bg-secondary p-2;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.logo {
+  margin-right: 0.5rem;
+  margin-bottom: 1.3rem;
+  height: 1em;
+  margin-left: 0.5rem;
+}
+  

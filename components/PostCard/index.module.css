@@ -1,0 +1,18 @@
+.postCard {
+  @apply max-w-md mx-auto bg-inherit shadow-md overflow-hidden md:max-w-2xl;
+  @apply border-solid border-2 rounded-sm border-secondary;
+}
+
+.picture {
+  @apply h-48 w-full object-cover md:h-full md:w-48;
+  @apply cursor-pointer;
+}
+
+.title {
+  @apply text-blue-500 mb-2;
+  @apply cursor-pointer;
+}
+
+.description {
+  @apply text-ellipsis overflow-hidden;
+}

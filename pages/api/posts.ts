@@ -18,7 +18,11 @@ export default function handler(
   }
   const posts = (POSTS_DATA as Post[]).slice(0, 9).map((post) => ({
     ...post,
-    slug: post.slug.replace(' ', '-'),
+    slug: buildSlug(post.slug),
   }));
   res.status(200).json(posts);
+}
+
+function buildSlug(slug: string) {
+  return slug.replace(/\s+/g, '-');
 }
